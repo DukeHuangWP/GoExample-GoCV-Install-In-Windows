@@ -1,0 +1,45 @@
+## 前言
+由於[GoCV對於Windows環境下使用糟糕的腳本撰寫方式]( https://github.com/hybridgroup/gocv/blob/release/win_build_opencv.cmd )，在參考了[moonchant12](https://github.com/moonchant12/install-gocv)建置腳本撰寫方式，在此示範如何完整建置GoCV與其相依套件OpenCV，此git已包含所有需要工具。
+
+## 包含工具
+ * msys64
+    * [msys2-x86_64-20230318](https://github.com/msys2/msys2-installer/releases/download/2023-03-18/msys2-x86_64-20230318.exe)
+        * make-4.4.1-1
+        * cmake-3.26.0-1
+        * gcc-11.3.0-3
+        * mingw-w64-x86_64-cmake-3.26.0-1
+        * mingw-w64-x86_64-gcc-12.2.0-10
+ * opencv套件
+    * [opencv-4.5.4](https://github.com/opencv/opencv/archive/4.5.4.zip)
+    * [opencv_contrib-4.5.4](https://github.com/opencv/opencv_contrib/archive/4.5.4.zip)
+ * Go & GoCV
+    * [Go-1.20.1](https://go.dev/dl/go1.20.1.windows-amd64.zip
+    * [GoCV-0.29.0](https://github.com/hybridgroup/gocv/archive/refs/tags/v0.29.0.zip)
+
+## 測試通過
+   * ``Windwos 7 x64`` ✔
+   * ``Windwos 10 x64`` ✘
+   * ``Windwos 11 x64`` ✔
+![Alt text](./參考資料/Windows 7 x64 Pass.png)
+
+## 建置方式
+   1. 確認``cmd.exe``可以正常執行
+   2. 將本git複製到不含有空白符號或特殊字元的目錄(可能導致camke編譯時失敗)
+   3. 執行``build_OpenCV_bin.cmd``，進行編譯OpenCV相依套件
+   4. 執行``check_GoCV_version.cmd``，若正確回傳``gocv version``和``opencv lib version``，則表示OpenCV與GoCV編譯成功
+
+## 檔案樹說明
+* 可依照自身需求修改版跟本檔案樹的內容
+* 編譯過程會將 ``GoRoot.zip`` 和 ``msys64.zip`` 解壓縮到 ``./GoRoot`` 和 ``./msys64``目錄
+* 編譯完成的OpenCV相依套件需要將``./build/install/x64/mingw/bin`` 設置到``Path``環境變數後再配合``mingw64``終端機使用
+   ```bash
+   +--- gocv-0.29.0
+   +--- GoPath  #執行check_GoCV_version.cmd產生佔存檔案目錄
+   +--- opencv-4.5.4
+   +--- opencv_contrib-4.5.4
+   +--- 參考資料
+   ├── build_OpenCV_bin.cmd #編譯OpenCV相依套件腳本
+   ├── check_GoCV_version.cmd #確認OpenCV與GoCV版本腳本
+   ├── GoRoot.zip #編譯時所使用的Golang
+   └── msys64.zip #編譯時所使用的終端機參考上方文件
+   ```
