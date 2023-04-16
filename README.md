@@ -18,7 +18,7 @@
 
 ## 測試通過
    * ``Windwos 7 x64`` ✔
-   * ``Windwos 10 x64`` ✘
+   * ``Windwos 10 x64`` ✔
    * ``Windwos 11 x64`` ✔
  
 ![Alt text](/參考資料/Windows%207%20x64%20Pass.png)
@@ -31,17 +31,21 @@
    4. 執行``check_GoCV_version.cmd``，若正確回傳``gocv version``和``opencv lib version``，則表示OpenCV與GoCV編譯成功
 
 ## 檔案樹說明
-* 可依照自身需求修改版跟本檔案樹的內容
-* 編譯過程會將 ``GoRoot.zip`` 和 ``msys64.zip`` 解壓縮到 ``./GoRoot`` 和 ``./msys64``目錄
-* 編譯完成的OpenCV相依套件需要將``./build/install/x64/mingw/bin`` 設置到``Path``環境變數後再配合``mingw64``終端機使用
+   1. 可依照自身需求修改版跟本檔案樹的內容
+   2. 編譯過程會將 ``GoRoot.zip`` 和 ``msys64.zip`` 分別解壓縮到 ``./GoRoot`` 和 ``./msys64``目錄
+   3. 編譯完成的OpenCV相依套件需要將``./build/install/x64/mingw/bin`` 設置到``Path``環境變數後再配合``mingw64``終端機使用
+   4. 編譯GoCV前需要將環境變數``CGO_CXXFLAGS``和``CGO_CPPFLAGS``指定OpenCV相依套件目錄(可參考腳本``check_GoCV_version.cmd ``)
+
    ```bash
+   +--- build #編譯OpenCV後產生檔案的佔存目錄
    +--- gocv-0.29.0
-   +--- GoPath  #執行check_GoCV_version.cmd產生佔存檔案目錄
+   +--- GoCache #執行check_GoCV_version.cmd產生Golang編譯佔存檔案目錄
+   +--- GoPath #執行check_GoCV_version.cmd產生Golang PKG佔存檔案目錄
    +--- opencv-4.5.4
    +--- opencv_contrib-4.5.4
    +--- 參考資料
    ├── build_OpenCV_bin.cmd #編譯OpenCV相依套件腳本
    ├── check_GoCV_version.cmd #確認OpenCV與GoCV版本腳本
-   ├── GoRoot.zip #編譯時所使用的Golang
-   └── msys64.zip #編譯時所使用的終端機參考上方文件
+   ├── GoRoot.zip #編譯時所使用的Golang，配合Git LFS政策做成壓縮檔
+   └── msys64.zip #編譯時所使用的終端機參考上方文件，配合Git LFS政策做成壓縮檔
    ```

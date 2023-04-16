@@ -11,11 +11,14 @@ set CGO_LDFLAGS=-L%workdir%/build/install/x64/mingw/lib -lopencv_core454 -lopenc
 ::CGO路徑參數必須手動設置
 set PATH=%workdir%\msys64\mingw64\bin;%workdir%\build\install\x64\mingw\bin;%workdir%\GoRoot\bin;
 ::PATH必須包含mingw64路徑
-go env -w GOCACHE=%workdir%\GoCache
+for /f "delims=" %%i in ('go env GOCACHE') do set originalGoCache=%%i
+go env -w GOCACHE="%workdir%\GoCache"
 ::刪除GoCache佔存避免其他GoCV版本影響
 if exist "%workdir%\GoCache" del /S /Q "%workdir%\GoCache\*"
 cd /D "%workdir%\gocv-0.29.0"
 go run cmd\version\main.go
 ^
+::還原GoCache佔存目錄
+go env -w GOCACHE="%originalGoCache%"
 cd..
 pause
