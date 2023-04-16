@@ -13,7 +13,7 @@
     * [opencv-4.5.4](https://github.com/opencv/opencv/archive/4.5.4.zip)
     * [opencv_contrib-4.5.4](https://github.com/opencv/opencv_contrib/archive/4.5.4.zip)
  * Go & GoCV
-    * [Go-1.20.3](https://go.dev/dl/go1.20.3.windows-amd64.zip
+    * [Go-1.20.3](https://go.dev/dl/go1.20.3.windows-amd64.zip)
     * [GoCV-0.29.0](https://github.com/hybridgroup/gocv/archive/refs/tags/v0.29.0.zip)
 
 ## 測試通過
