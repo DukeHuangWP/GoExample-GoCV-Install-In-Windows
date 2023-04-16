@@ -1,5 +1,5 @@
 ## 前言
-由於[GoCV對於Windows環境下使用糟糕的腳本撰寫方式]( https://github.com/hybridgroup/gocv/blob/release/win_build_opencv.cmd )，在參考了[moonchant12](https://github.com/moonchant12/install-gocv)建置腳本撰寫方式，在此示範如何完整建置GoCV與其相依套件OpenCV，此git已包含所有需要工具。
+由於[GoCV對於Windows環境下使用糟糕的腳本撰寫方式]( https://github.com/hybridgroup/gocv/blob/release/win_build_opencv.cmd )，在參考了[moonchant12](https://github.com/moonchant12/install-gocv)建置腳本撰寫方式後，在此示範如何完整建置GoCV與其相依套件OpenCV，此git已包含所有需要工具無需額外再下載其他元件。
 
 ## 包含工具
  * msys64
