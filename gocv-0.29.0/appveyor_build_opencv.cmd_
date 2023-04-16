@@ -1,6 +1,6 @@
 
 if not exist "C:\opencv" mkdir "C:\opencv"
-if not exist "C:\opencv\build" mkdir "C:\opencv\build"
+if not exist "C:\openv\build" mkdir "C:\opencv\build"
 if not exist "C:\opencv\testdata" mkdir "C:\opencv\testdata"
 
 appveyor DownloadFile https://github.com/opencv/opencv/archive/4.5.4.zip -FileName c:\opencv\opencv-4.5.4.zip

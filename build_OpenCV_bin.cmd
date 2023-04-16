@@ -2,6 +2,7 @@ set enable_shared=ON
 set workdir=%cd%
 ::path當中msys64順序不可以改
 set PATH=%SYSTEMROOT%\System32\WindowsPowerShell\v1.0;
+@echo 解壓縮使用powershell，若遇到錯誤可自行手動解壓縮msys64.zip到目錄內
 @echo 建置過程需要一段時間.....
 @echo 注意腳本執行目錄不可用空白符號或特殊字元，可能導致camke編譯時失敗(原因不明)
 
@@ -23,9 +24,3 @@ mingw32-make install
 @echo 請檢查 %workdir%\build\install\x64\mingw\bin 是否編譯完成
 cd "%workdir%"
 pause
-
-
-
-
-
-
