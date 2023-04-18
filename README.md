@@ -10,8 +10,8 @@
         * mingw-w64-x86_64-cmake-3.26.0-1
         * mingw-w64-x86_64-gcc-12.2.0-10
  * opencv套件
-    * [opencv-4.5.4](https://github.com/opencv/opencv/archive/4.6.0.zip)
-    * [opencv_contrib-4.5.4](https://github.com/opencv/opencv_contrib/archive/4.6.0.zip)
+    * [opencv-4.6.0](https://github.com/opencv/opencv/archive/4.6.0.zip)
+    * [opencv_contrib-4.6.0](https://github.com/opencv/opencv_contrib/archive/4.6.0.zip)
  * Go & GoCV
     * [Go-1.20.3](https://go.dev/dl/go1.20.3.windows-amd64.zip)
     * [GoCV-0.30.0](https://github.com/hybridgroup/gocv/archive/refs/tags/v0.30.0.zip)
