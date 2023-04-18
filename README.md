@@ -10,11 +10,11 @@
         * mingw-w64-x86_64-cmake-3.26.0-1
         * mingw-w64-x86_64-gcc-12.2.0-10
  * opencv套件
-    * [opencv-4.5.4](https://github.com/opencv/opencv/archive/4.5.4.zip)
-    * [opencv_contrib-4.5.4](https://github.com/opencv/opencv_contrib/archive/4.5.4.zip)
+    * [opencv-4.5.4](https://github.com/opencv/opencv/archive/4.6.0.zip)
+    * [opencv_contrib-4.5.4](https://github.com/opencv/opencv_contrib/archive/4.6.0.zip)
  * Go & GoCV
     * [Go-1.20.3](https://go.dev/dl/go1.20.3.windows-amd64.zip)
-    * [GoCV-0.29.0](https://github.com/hybridgroup/gocv/archive/refs/tags/v0.29.0.zip)
+    * [GoCV-0.30.0](https://github.com/hybridgroup/gocv/archive/refs/tags/v0.30.0.zip)
 
 ## 測試通過
    * ``Windwos 7 x64`` ✔
@@ -38,11 +38,11 @@
 
    ```bash
    +--- build #編譯OpenCV後產生檔案的佔存目錄
-   +--- gocv-0.29.0
+   +--- gocv@0.30.0
    +--- GoCache #執行check_GoCV_version.cmd產生Golang編譯佔存檔案目錄
    +--- GoPath #執行check_GoCV_version.cmd產生Golang PKG佔存檔案目錄
-   +--- opencv-4.5.4
-   +--- opencv_contrib-4.5.4
+   +--- opencv-4.6.0
+   +--- opencv_contrib-4.6.0
    +--- 參考資料
    ├── build_OpenCV_bin.cmd #編譯OpenCV相依套件腳本
    ├── check_GoCV_version.cmd #確認OpenCV與GoCV版本腳本
