@@ -27,25 +27,32 @@
 ## 建置方式
    1. 確認``cmd.exe``可以正常執行
    2. 將本git複製到不含有空白符號或特殊字元的目錄(可能導致camke編譯時失敗)
-   3. 執行``build_OpenCV_bin.cmd``，進行編譯OpenCV相依套件
-   4. 執行``check_GoCV_version.cmd``，若正確回傳``gocv version``和``opencv lib version``，則表示OpenCV與GoCV編譯成功
-
+   3. 執行``01. build_OpenCV_bin.cmd``，進行編譯OpenCV相依套件
+   4. 執行``02. check_GoCV_version.cmd``，若正確回傳``gocv version``和``opencv lib version``，則表示OpenCV與GoCV編譯成功
+   5. 執行``03. runExample.cmd``，若正確回傳圖片辨識座標，則表示OpenCV與GoCV執行成功
 ## 檔案樹說明
    1. 可依照自身需求修改版跟本檔案樹的內容
    2. 編譯過程會將 ``GoRoot.zip`` 和 ``msys64.zip`` 分別解壓縮到 ``./GoRoot`` 和 ``./msys64``目錄
    3. 編譯完成的OpenCV相依套件需要將``./build/install/x64/mingw/bin`` 設置到``Path``環境變數後再配合``mingw64``終端機使用
-   4. 編譯GoCV前需要將環境變數``CGO_CXXFLAGS``和``CGO_CPPFLAGS``指定OpenCV相依套件目錄(可參考腳本``check_GoCV_version.cmd ``)
+   4. 編譯GoCV前需要將環境變數``CGO_CXXFLAGS``和``CGO_CPPFLAGS``指定OpenCV相依套件目錄(可參考腳本``02. check_GoCV_version.cmd ``和``03. runExample.cmd``)
 
    ```bash
-   +--- build #編譯OpenCV後產生檔案的佔存目錄
-   +--- gocv@0.30.0
-   +--- GoCache #執行check_GoCV_version.cmd產生Golang編譯佔存檔案目錄
-   +--- GoPath #執行check_GoCV_version.cmd產生Golang PKG佔存檔案目錄
-   +--- opencv-4.6.0
-   +--- opencv_contrib-4.6.0
-   +--- 參考資料
-   ├── build_OpenCV_bin.cmd #編譯OpenCV相依套件腳本
-   ├── check_GoCV_version.cmd #確認OpenCV與GoCV版本腳本
-   ├── GoRoot.zip #編譯時所使用的Golang，配合Git LFS政策做成壓縮檔
-   └── msys64.zip #編譯時所使用的終端機參考上方文件，配合Git LFS政策做成壓縮檔
+  ├─ /build #編譯OpenCV後產生檔案的佔存目錄
+  ├─ /GoCVExample #gocv尋找相似圖範例
+  │   ├─ /gocv@0.31.0 #官方PKG
+  │   ├─ /gocv-driver #gocv應用方式範例PKG
+  │   ├─ fullPicture.png #完整圖片
+  │   ├─ sample.png #印本圖片
+  │   └─ main.go #範例執行入口
+  │
+  ├─ /GoCache #執行check_GoCV_version.cmd產生Golang編譯佔存檔案目錄
+  ├─ /GoPath #執行check_GoCV_version.cmd產生Golang PKG佔存檔案目錄
+  ├─ /opencv-4.6.0
+  ├─ /opencv_contrib-4.6.0
+  ├─ /參考資料
+  ├─ 01. build_OpenCV_bin.cmd #編譯OpenCV相依套件腳本
+  ├─ 02. check_GoCV_version.cmd #確認OpenCV與GoCV版本腳本
+  ├─ 03. runExample.cmd #編譯完OpenCV後，執行gocv尋找相似圖範例
+  ├─ GoRoot.zip #編譯時所使用的Golang，配合Git LFS政策做成壓縮檔
+  └─ msys64.zip #編譯時所使用的終端機參考上方文件，配合Git LFS政策做成壓縮檔
    ```
