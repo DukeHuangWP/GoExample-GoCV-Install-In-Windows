@@ -14,7 +14,7 @@
     * [opencv_contrib-4.6.0](https://github.com/opencv/opencv_contrib/archive/4.6.0.zip)
  * Go & GoCV
     * [Go-1.20.3](https://go.dev/dl/go1.20.3.windows-amd64.zip)
-    * [GoCV-0.30.0](https://github.com/hybridgroup/gocv/archive/refs/tags/v0.30.0.zip)
+    * [GoCV@0.31.0](https://github.com/hybridgroup/gocv/archive/refs/tags/v0.31.0.zip)
 
 ## 測試通過
    * ``Windwos 7 x64`` ✔
