@@ -15,7 +15,7 @@ for /f "delims=" %%i in ('go env GOCACHE') do set originalGoCache=%%i
 go env -w GOCACHE="%workdir%\GoCache"
 ::刪除GoCache佔存避免其他GoCV版本影響
 if exist "%workdir%\GoCache" del /S /Q "%workdir%\GoCache\*"
-cd /D "%workdir%\gocv@0.31.0"
+cd /D "%workdir%\GoCVExample\gocv@0.31.0"
 go run cmd\version\main.go
 ^
 ::還原GoCache佔存目錄
